@@ -5,6 +5,12 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class BeanLifeCycleDemoBean implements InitializingBean, DisposableBean {
 
+
+    public BeanLifeCycleDemoBean() {
+        customInit();
+        customDestroy();
+    }
+
     public void customInit()
     {
         System.out.println("Custom Initialization.....");

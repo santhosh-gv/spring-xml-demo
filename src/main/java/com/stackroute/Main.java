@@ -15,8 +15,7 @@ public class Main {
         //System.out.println("Removed Autowire byType and added constructor injection");
         movie2.afterPropertiesSet();
         movie2.destroy();
-        movie2.customInit();
-        movie2.customDestroy();
+        
 
 
 
