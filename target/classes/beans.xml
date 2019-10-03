@@ -10,42 +10,19 @@
         <property name="age" value="68"/>
     </bean>
 
-    <bean id="movie" class="com.stackroute.domain.Movie">
-        <property name="Actor" ref="actor"/>
+    <bean id="actor1" class="com.stackroute.domain.Actor">
+        <property name="name" value="Ajith"/>
+        <property name="gender" value="Male"/>
+        <property name="age" value="53"/>
     </bean>
 
-    <bean id="cons-actor1" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="Vijay Devarakonda"/>
-        <constructor-arg index="1" value="Male"/>
-        <constructor-arg index="2" value="29"/>
+    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName">
+
     </bean>
 
-    <bean id="cons-actor2" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="Vijay"/>
-        <constructor-arg index="1" value="Male"/>
-        <constructor-arg index="2" value="53"/>
+    <bean id="movie2" class="com.stackroute.domain.Movie">
+        <constructor-arg index="0" ref="actor1"/>
     </bean>
 
-    <bean id="cons-actor3" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="Ajith"/>
-        <constructor-arg index="1" value="Male"/>
-        <constructor-arg index="2" value="53"/>
-    </bean>
-
-    <bean id="sarkar" scope="prototype" class="com.stackroute.domain.Movie">
-        <constructor-arg index="0" ref="cons-actor2"/>
-    </bean>
-
-    <bean id="arjun reddy" scope="prototype" class="com.stackroute.domain.Movie">
-        <constructor-arg index="0" ref="cons-actor1"/>
-    </bean>
-
-    <bean id="mankatha" class="com.stackroute.domain.Movie">
-        <constructor-arg index="0" ref="cons-actor3"/>
-    </bean>
-
-    <bean name="arjun reddy, taxiwaala" scope="prototype" class="com.stackroute.domain.Movie">
-        <constructor-arg index="0" ref="cons-actor1"/>
-    </bean>
 
 </beans>
