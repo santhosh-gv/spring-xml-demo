@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="actor" class="com.stackroute.domain.Actor">
+        <property name="name" value="Rajinikanth"/>
+        <property name="gender" value="Male"/>
+        <property name="age" value="68"/>
+    </bean>
+
+    <bean id="movie" class="com.stackroute.domain.Movie">
+        <property name="Actor" ref="actor"/>
+    </bean>
+
+</beans>
