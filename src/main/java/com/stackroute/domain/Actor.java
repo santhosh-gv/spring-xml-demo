@@ -6,6 +6,26 @@ public class Actor {
     private String gender;
     private int age;
 
+    public Actor() {
+    }
+
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    public int compareActor(Actor a)
+    {
+        if(this.name==a.name && this.age == a.age && this.gender == a.gender)
+        {
+            return 1;
+        }
+        else
+            return 0;
+    }
+
+
     public void setName(String name) {
         this.name = name;
     }

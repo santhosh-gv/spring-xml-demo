@@ -34,5 +34,41 @@ public class Main {
         System.out.println("Using BeanDefinitionRegistry and BeanDefinitionReader");
         mov.displayActorDetails();
 
+        System.out.println();
+        System.out.println("Task 2");
+        System.out.println();
+        //Task  2
+
+        ApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("beans.xml");
+
+        Movie movie2 = applicationContext1.getBean("mankatha",Movie.class);
+       // System.out.println("Using Application Context");
+        movie2.displayActorDetails();
+
+        System.out.println();
+        Movie movie2again = applicationContext1.getBean("mankatha",Movie.class);
+       // System.out.println("Using Application Context");
+        movie2again.displayActorDetails();
+
+        System.out.println();
+        Movie movie2a = applicationContext1.getBean("sarkar",Movie.class);
+       // System.out.println("Using Application Context");
+        movie2a.displayActorDetails();
+        System.out.println();
+
+        Movie movie2b = applicationContext1.getBean("arjun reddy",Movie.class);
+     //   System.out.println("Using Application Context");
+        movie2b.displayActorDetails();
+        System.out.println();
+
+        movie2.compareMovie(movie2again);
+
+        System.out.println();
+
+        System.out.println("Checking for multiple movie names");
+
+        Movie movie2t = applicationContext1.getBean("taxiwaala",Movie.class);
+     //   System.out.println("Using Application Context");
+        movie2t.displayActorDetails();
     }
 }
