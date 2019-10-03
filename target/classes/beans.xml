@@ -24,7 +24,7 @@
     </bean>
 
 
-    <bean id="beanLifecycle" class="com.stackroute.demo.BeanLifeCycleDemoBean" autowire="constructor">
+    <bean id="beanPostProcessor" class="com.stackroute.demo.BeanPostProcessorDemoBean">
     </bean>
 
 </beans>
