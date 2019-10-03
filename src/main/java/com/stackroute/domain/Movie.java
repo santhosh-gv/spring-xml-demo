@@ -1,6 +1,13 @@
 package com.stackroute.domain;
 
-public class Movie {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
 
     private Actor actor;
 
@@ -19,15 +26,20 @@ public class Movie {
     {
         System.out.println(actor.toString());
     }
-    public void compareMovie(Movie a)
-    {
-        int flag = this.actor.compareActor(a.actor);
-        if(flag == 1)
-        {
-            System.out.println("beanA==beanB");
-        }
-        else {
-            System.out.println("beanA!=beanB");
-        }
+
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("This bean factory is " + beanFactory.toString());
+    }
+
+    @Override
+    public void setBeanName(String s) {
+        System.out.println("The name of the bean is "+ s);
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println("The name of the application is  "+ applicationContext.getApplicationName());
     }
 }

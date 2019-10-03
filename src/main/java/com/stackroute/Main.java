@@ -23,6 +23,10 @@ public class Main {
         Movie movie2 = applicationContext.getBean("movie2",Movie.class);
         System.out.println("Removed Autowire byType and added constructor injection");
         movie2.displayActorDetails();
+        movie2.setBeanName("app");
+        movie2.setApplicationContext(applicationContext);
+        
+
 
     }
 }
