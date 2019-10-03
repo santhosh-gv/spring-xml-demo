@@ -17,12 +17,14 @@
     </bean>
 
     <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName">
-
     </bean>
 
     <bean id="movie2" class="com.stackroute.domain.Movie">
         <constructor-arg index="0" ref="actor1"/>
     </bean>
 
+
+    <bean id="beanLifecycle" class="com.stackroute.demo.BeanLifeCycleDemoBean">
+    </bean>
 
 </beans>

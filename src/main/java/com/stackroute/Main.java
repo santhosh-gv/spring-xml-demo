@@ -1,31 +1,23 @@
 package com.stackroute;
 
+import com.stackroute.demo.BeanLifeCycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        //Task 3
+        //Task 5
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie = applicationContext.getBean("movie",Movie.class);
-        System.out.println("Autowire byName");
-        movie.displayActorDetails();
+        BeanLifeCycleDemoBean movie2 = applicationContext.getBean("beanLifecycle",BeanLifeCycleDemoBean.class);
+        //System.out.println("Removed Autowire byType and added constructor injection");
+        movie2.afterPropertiesSet();
+        movie2.destroy();
+        movie2.customInit();
+        movie2.customDestroy();
 
-        System.out.println();
-
-//        Movie movie2 = applicationContext.getBean("movie2",Movie.class);
-//        System.out.println("Autowire byType");
-//        movie2.displayActorDetails();
-
-        Movie movie2 = applicationContext.getBean("movie2",Movie.class);
-        System.out.println("Removed Autowire byType and added constructor injection");
-        movie2.displayActorDetails();
-        movie2.setBeanName("app");
-        movie2.setApplicationContext(applicationContext);
-        
 
 
     }
