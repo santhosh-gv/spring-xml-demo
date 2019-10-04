@@ -4,27 +4,10 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="actor" class="com.stackroute.domain.Actor">
-        <property name="name" value="Rajinikanth"/>
-        <property name="gender" value="Male"/>
-        <property name="age" value="68"/>
+
+    <bean id="beanPostProcessor" class="com.stackroute.demo.BeanLifeCycleDemoBean" init-method="customInit" destroy-method="customDestroy">
     </bean>
 
-    <bean id="actor1" class="com.stackroute.domain.Actor">
-        <property name="name" value="Ajith"/>
-        <property name="gender" value="Male"/>
-        <property name="age" value="53"/>
-    </bean>
-
-    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName">
-    </bean>
-
-    <bean id="movie2" class="com.stackroute.domain.Movie">
-        <constructor-arg index="0" ref="actor1"/>
-    </bean>
-
-
-    <bean id="beanPostProcessor" class="com.stackroute.demo.BeanPostProcessorDemoBean">
-    </bean>
+    <bean class="com.stackroute.demo.BeanPostProcessorDemoBean"/>
 
 </beans>
